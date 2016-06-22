@@ -1,0 +1,13 @@
+span:first-of-type {
+  font-size: 15px; }
+
+span {
+  font-size: 35px;
+  border: 1px solid black;
+  padding: 4px 4px 4px 4px; }
+
+.success:before {
+  content: "SUCESSO 7"; }
+
+.failure:before {
+  content: "failure"; }

@@ -1,0 +1,35 @@
+div {
+  display: block;
+
+  .box {
+    display: inline-block;
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+
+    &.box-small {
+      height: 50px;
+      width: 50px;
+      margin: 2px 2px 2px 2px;
+      position: relative;
+      top: 10px;
+      left: 10px;
+    }
+  }
+}
+
+.row {
+  position:relative;
+  top: 50px;
+
+  span:before {
+    content: 'BEFORE: '
+  }
+
+  span {
+    &:after {
+      content: ' AFTER'
+    }
+  }
+}

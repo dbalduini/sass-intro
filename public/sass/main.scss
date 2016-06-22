@@ -1,0 +1,33 @@
+@import '_mixins';
+@import '_keyframes';
+@import '_functions';
+
+.box {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  border: 1px solid black;
+  @include border-radius(10px);
+  opacity: 0;
+}
+
+@for $i from 0 through 10 {
+  $current: decRgb($i);
+  // @debug('Rgb', $i, $current);
+
+  .red .box-#{$i} {
+    background-color: rgb($current, 0, 0);
+    @include boxAnimation($i);
+  }
+
+  .green .box-#{$i} {
+    background-color: rgb(0, $current, 0);
+    @include boxAnimation($i);
+  }
+
+  .blue .box-#{$i} {
+    background-color: rgb(0, 0, $current);
+    @include boxAnimation($i);
+  }
+}

@@ -1,0 +1,3 @@
+@function decRgb($i) {
+  @return 255 - ($i * 25);
+}
