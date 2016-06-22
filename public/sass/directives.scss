@@ -1,0 +1,52 @@
+// @each, @debug
+$animal-list: cat dog bird monkey panda;
+
+@each $animal in $animal-list {
+  @debug($animal);
+}
+
+// @while, list literal, append, @warn
+
+$empty-list: ();
+
+@while length($empty-list) < 10 {
+  $empty-list: append($empty-list, random());
+}
+
+@warn($empty-list);
+
+// @for, @if, operators
+
+$sum: 0;
+
+@for $i from 1 to 10 {
+  $sum: $sum + $i;
+
+  @if $sum >= 10 {
+    @debug("$sum >= 10: " + $sum);
+  } @else {
+    @debug("$sum < 10: " + $sum);
+  }
+
+  @if $sum > 1 and $sum < 5 {
+    @debug("1 > $sum > 5: " + $sum);
+  }
+
+  @if $sum % 5 == 0 {
+    @debug("Divisible by 5: " + $sum);
+  }
+
+}
+
+@for $i from 0 to 10 {
+  @debug($i);
+}
+
+@warn("10 is not included");
+
+@for $i from 0 through 10 {
+  @debug($i);
+}
+
+// @error
+// @error("I am a compilation error and i will crash your build!", 42, 42px, 13s);

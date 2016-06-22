@@ -2,19 +2,20 @@
 @import '_keyframes';
 @import '_functions';
 
+$box-border: 1px solid black;
+
 .box {
   display: inline-block;
   height: 100px;
   width: 100px;
   margin: 5px;
-  border: 1px solid black;
+  border: $box-border;
   @include border-radius(10px);
   opacity: 0;
 }
 
 @for $i from 0 through 10 {
-  $current: decRgb($i);
-  // @debug('Rgb', $i, $current);
+  $current: iterationRGB($i);
 
   .red .box-#{$i} {
     background-color: rgb($current, 0, 0);
